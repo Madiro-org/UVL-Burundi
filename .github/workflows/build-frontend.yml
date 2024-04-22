@@ -37,6 +37,3 @@ jobs:
           tags: ${{ secrets.DOCKERHUB_USERNAME_MADIRO }}/openmrs3-backend:${{ env.BRANCH_NAME }}
           cache-from: type=gha 
           cache-to: type=gha,mode=max
-          tags: ${{ secrets.DOCKERHUB_USERNAME_MADIRO }}/openmrs3-backend:${{ env.BRANCH_NAME }}
-          cache-from: type=gha 
-          cache-to: type=gha,mode=max
