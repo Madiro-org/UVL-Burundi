@@ -14,7 +14,7 @@ services:
   # OpenMRS 3 Frontend
   frontend:
     container_name: openmrs-frontend
-    image: msfocg/openmrs3-frontend:${HOSTNAME_TAG:-dev}
+    image: globalmadiro/openmrs3-frontend:${HOSTNAME_TAG:-dev}
     environment:
       SPA_PATH: /openmrs/spa
       API_URL: /openmrs
@@ -28,7 +28,7 @@ services:
   # OpenMRS Core Backend
   backend:
     container_name: openmrs-backend
-    image: msfocg/openmrs3-backend:${HOSTNAME_TAG:-dev}
+    image: globalmadiro/openmrs3-backend:${HOSTNAME_TAG:-dev}
     depends_on:
       - db
     environment:
