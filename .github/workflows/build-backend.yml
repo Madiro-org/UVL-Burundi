@@ -30,6 +30,6 @@ jobs:
           platforms: linux/amd64,linux/arm64
           push: true
           # Using the extracted branch name as the tag
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/openmrs3-backend:${{ env.BRANCH_NAME }}
+          tags: uvl/openmrs3-backend:${{ env.BRANCH_NAME }}
           cache-from: type=gha 
           cache-to: type=gha,mode=max
