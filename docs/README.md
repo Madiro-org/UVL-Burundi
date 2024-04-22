@@ -1,6 +1,6 @@
 # Introduction
 
-> Note: This documentation describes how the OpenMRS 3.x demo for the MSF OCG LIME project is running. It follows standard practices from OpenMRS and its community, and goes through the lifecycle of the product. The integration with other dependencies such as [OpenConceptLab (OCL)](https://openconceptlab.org/) and [DHIS2](https://dhis2.org/) is also documented here. Any feedback and pull requests are welcomed to continuously improved this demo! 
+> Note: This documentation describes how OpenMRS 3.x for the UVL in Burundi is running. It follows standard practices from OpenMRS and its community, and goes through the lifecycle of the product. The integration with other dependencies such as [OpenConceptLab (OCL)](https://openconceptlab.org/) and [DHIS2](https://dhis2.org/) is also documented here. Any feedback and pull requests are welcomed to continuously improved this demo! 
 
 # Getting started
 
@@ -48,7 +48,7 @@ services:
       - "80:80"
 
   frontend:
-    image: msfocg/openmrs3-frontend:dev
+    image: uvl/openmrs3-frontend:dev
     environment:
       SPA_PATH: /openmrs/spa
       API_URL: /openmrs
@@ -62,7 +62,7 @@ services:
       - ./frontend/custom-config.json:/usr/share/nginx/html/custom-config.json
 
   backend:
-    image: msfocg/openmrs3-backend:dev
+    image: uvl/openmrs3-backend:dev
     depends_on:
       - db
     environment:
@@ -318,14 +318,14 @@ docker restart lime-emr-project-demo-backend
 
 ## Concepts and content
 
-Content is organized in OpenConceptLab (OCL), in the [LIME Demo collection](https://app.openconceptlab.org/#/orgs/MSFOCG/collections/lime-demo/ ) and manually exported as ZIP files, then added to the configuration:
+Content is organized in OpenConceptLab (OCL), in the [LIME Demo collection](https://app.openconceptlab.org/#/orgs/UVL/collections/ ) and manually exported as ZIP files, then added to the configuration:
 > /distro/configuration/OCL
 
 In CSV templats
 1. Define project-specific metadata
 In OpenConceptLab (OCL)
-2. Identify concepts that can be reused in a) CIEL source b) MSF sources
-3. Create new concepts if needed in MSF OCG source
+2. Identify concepts that can be reused in a) CIEL source b) UVL sources
+3. Create new concepts if needed in UVL source
 4. Create collections of concepts needed for the implementation (per program, per form, and generic ones)
 5. Release the collection and export it as a ZIP file
 In distribution configuration
@@ -370,7 +370,7 @@ List of i18next parsers
 3. leave the form labels empty to pull the label based on the translations in the concepts
 
 # Build
-Docker images will automatically be rebuilt and pushed to [Docker Hub of MSF OCG](https://hub.docker.com/r/msfocg) when binaries or configurations are modified. 
+Docker images will automatically be rebuilt and pushed to [Docker Hub of UVL](https://hub.docker.com/r/uvl) when binaries or configurations are modified. 
 
 ## Actions
 
