@@ -33,6 +33,6 @@ jobs:
           file: frontend/Dockerfile
           platforms: linux/amd64,linux/arm64
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/openmrs3-frontend:${{ env.BRANCH_NAME }}
+          tags: uvl/openmrs3-frontend:${{ env.BRANCH_NAME }}
           cache-from: type=gha 
           cache-to: type=gha,mode=max
